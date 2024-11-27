@@ -1,14 +1,15 @@
 // const express = require('express')
 import dotenv from "dotenv";
+import cors from "cors";
 dotenv.config();
 import express from "express"
 import connectDB from "./src/db/index.js";
-const app = express()
 const port = process.env.PORT 
 import todosRoutes from "./src/routes/todos.routes.js";
 
+const app = express()
 
-
+app.use(cors());
 app.use(express.json());
 
 
